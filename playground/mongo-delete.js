@@ -31,14 +31,14 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
   //   });
   
   // Find One and Delete
-  todoCollection
-    .findOneAndDelete({text: "Something to do"})
-    .then(result => {
-      if(result.lastErrorObject.n === 0) {
-        return console.log('No files deleted.');
-      }
-      console.log(`Item Deleted:\n${JSON.stringify(result.value, undefined, 2)}`);
-    });
+  // todoCollection
+  //   .findOneAndDelete({text: "Something to do"})
+  //   .then(result => {
+  //     if(result.lastErrorObject.n === 0) {
+  //       return console.log('No files deleted.');
+  //     }
+  //     console.log(`Item Deleted:\n${JSON.stringify(result.value, undefined, 2)}`);
+  //   });
 
   client.close();
 });
