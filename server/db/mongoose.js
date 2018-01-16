@@ -2,10 +2,8 @@ var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const getMongoUrl = () => {
-  // return 'mongodb://admin:!Super1Secret!@ds159187.mlab.com:59187/todos-app';
-}
+var MONGODB_URI = process.env.MONGODB_URI;
 
-mongoose.connect(getMongoUrl() ? getMongoUrl() : 'mongodb://localhost:27017/TodoApp', {useMongoClient: true});
+mongoose.connect(MONGODB_URI, {useMongoClient: true});
 
 module.exports = { mongoose };
